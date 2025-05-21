@@ -1,0 +1,18 @@
+# nginx-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: application 
+  labels:
+    app: nginx
+spec:
+  selector:
+    app: nginx 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80 
+      nodePort: 30080
+                      
+  type: NodePort 
